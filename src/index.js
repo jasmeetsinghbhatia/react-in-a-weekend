@@ -1,23 +1,52 @@
 import React from "react";
 import ReactDom from "react-dom";
 
-function Greeting() {
+//css
+import "./index.css";
+
+function BookList() {
   return (
-    <React.Fragment>
-      <div>
-        <Person />
-        <Message />
-      </div>
-    </React.Fragment>
+    <section className="booklist">
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const Person = () => {
-  return <h1>John Doe</h1>;
+const Book = () => {
+  return (
+    <article className="book">
+      <Image />
+      <Title />
+      <Author />
+    </article>
+  );
 };
 
-const Message = () => {
-  return <p> This is a message</p>;
+const Title = () => {
+  return <h1>I Love you to the Moon and Back</h1>;
 };
 
-ReactDom.render(<Greeting />, document.getElementById("root"));
+const Author = () => {
+  return (
+    <h4 style={{ color: "#617d98", fontSize: "0.75rem", marginTop: "0.25rem" }}>
+      Amelia Hepworth
+    </h4>
+  );
+};
+
+const Image = () => {
+  return (
+    <img
+      src="https://images-na.ssl-images-amazon.com/images/I/81eB%2B7%2BCkUL._AC_UL200_SR200,200_.jpg"
+      alt="this is book cover"
+    ></img>
+  );
+};
+
+ReactDom.render(<BookList />, document.getElementById("root"));
