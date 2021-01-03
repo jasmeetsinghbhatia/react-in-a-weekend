@@ -4,20 +4,16 @@ import ReactDom from "react-dom";
 //css
 import "./index.css";
 // book component from book.js
-import {Book} from "./book";
+import { Book } from "./Book";
 // data about books from books.js
-import { Books } from "./books";
+import { Data } from "./data";
 
-const booksList = Books.map((book) => {
-  return <Book book={book}/>;
+const booksList = Data.map((book) => {
+  return <Book key={book.id} {...book} />;
 });
 
 function BookList() {
-  return (
-    <section className="booklist">
-      {booksList}
-      </section>
-  );
+  return <section className="booklist">{booksList}</section>;
 }
 
 ReactDom.render(<BookList />, document.getElementById("root"));
